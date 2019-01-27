@@ -1,11 +1,13 @@
 <div class="animated fadeIn">
     <span class="toggler active" data-toggle="grid"><span class="entypo-layout"></span></span>
     <span class="toggler" data-toggle="list"><span class="entypo-list"></span></span>
-    <div class="form">
-        <input type="text" placeholder="Type Project" id="project" />
-        <button class="button" id="add-button">Add Project</button>
-        <button type="button" class="btn btn-primary px-4" style="float:right" (click)="htmlInsideModal.open()" >Invite</button>
-      </div>
+    
+        <div>
+          <input type="text" class="form-control" placeholder="Type name of Board" id="project" />
+          <span style="margin-left:10px"></span>
+          <button class="button" class="btn btn-primary px-4" id="add-button">Add Board</button>
+        </div>          
+    
       <br>
     <ul class="surveys grid backlog">
       <p>January </p>

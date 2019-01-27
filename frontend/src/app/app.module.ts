@@ -7,6 +7,10 @@ import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {ModalModule} from 'angular-custom-modal';
+import {FormsModule } from "@angular/forms";
+import {  Register } from './views/register/register.model';
+import { RegisterService } from './views/register/register.service';
+
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
 };
@@ -49,6 +53,7 @@ import { DefaultLayoutStaffComponent } from './containers/default-layout-staff';
 import { DefaultLayoutQualityAssuranceComponent } from './containers/default-layout-qualityassurance';
 import { DefaultLayoutQualityAssuranceManagerComponent } from './containers/default-layout-qualityassurancemanager';
 import { DefaultLayoutProjectManagerComponent } from './containers/default-layout-projectmanager';
+import { from } from 'rxjs';
 
 
 @NgModule({
@@ -66,7 +71,8 @@ import { DefaultLayoutProjectManagerComponent } from './containers/default-layou
     PerfectScrollbarModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
-    ChartsModule
+    ChartsModule,
+    FormsModule
   ],
   declarations: [
     AppComponent,
@@ -78,9 +84,9 @@ import { DefaultLayoutProjectManagerComponent } from './containers/default-layou
     IndexComponent
     
   ],
-  providers: [{
+  providers: [RegisterService, {
     provide: LocationStrategy,
-    useClass: HashLocationStrategy
+    useClass: HashLocationStrategy,
   }],
   bootstrap: [ AppComponent ]
 })
